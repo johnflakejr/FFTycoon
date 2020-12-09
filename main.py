@@ -1,5 +1,7 @@
 import pygame
 import sys 
+import Player
+
 
 def main(): 
 
@@ -8,6 +10,10 @@ def main():
 
 	screen = pygame.display.set_mode(size) 
 	pygame.display.set_caption("Fantasy Football Tycoon"); 
+	
+	me = Player.Player(); 
+
+	print(me.generate_name()); 
 
 
 	#Main game loop
