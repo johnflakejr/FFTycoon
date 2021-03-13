@@ -1,6 +1,7 @@
 import pygame
 import sys 
 import Player
+import Team
 
 
 
@@ -13,8 +14,8 @@ def main():
 
   pygame.display.set_caption("Fantasy Football Tycoon"); 
 
-  me = Player.Player(); 
-  name = Player.Player.Generate_Name(); 
+  me = Player.Player("QB"); 
+  print("Made player:\n",me)
 
   #Main game loop
   while True: 
@@ -28,9 +29,6 @@ def main():
 
     screen.fill((255,0,0)) 
     pygame.display.flip() 
-
-    
-  
 
 main() 
 #EOF
