@@ -3,31 +3,34 @@ import sys
 import Player
 
 
+
 def main(): 
 
-	#Can change size later
-	size = width,height = 640, 320
+  #Can change size later
+  size = width,height = 640, 320
 
-	screen = pygame.display.set_mode(size) 
-	pygame.display.set_caption("Fantasy Football Tycoon"); 
-	
-	me = Player.Player(); 
+  screen = pygame.display.set_mode(size) 
 
-	print(me.generate_name()); 
+  pygame.display.set_caption("Fantasy Football Tycoon"); 
 
+  me = Player.Player(); 
+  name = Player.Player.Generate_Name(); 
 
-	#Main game loop
-	while 1: 
+  #Main game loop
+  while True: 
 
-		#Check for clicks/key presses/quitting
-		for event in pygame.event.get(): 
-			if event.type == pygame.QUIT: 
-				sys.exit() 
+    #Check for clicks/key presses/quitting
+    for event in pygame.event.get(): 
+      if event.type == pygame.QUIT: 
+        sys.exit() 
+      elif event.type == pygame.MOUSEBUTTONDOWN and 1 == event.button:
+        print("Player pressed the mouse at location:", str(pygame.mouse.get_pos())) 
 
-		screen.fill((255,0,0)) 
-		pygame.display.flip() 
+    screen.fill((255,0,0)) 
+    pygame.display.flip() 
 
-		
-	
+    
+  
 
 main() 
+#EOF
